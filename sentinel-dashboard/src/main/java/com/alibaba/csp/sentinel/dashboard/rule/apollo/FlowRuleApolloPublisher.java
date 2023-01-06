@@ -54,7 +54,7 @@ public class FlowRuleApolloPublisher implements DynamicRulePublisher<List<FlowRu
         openItemDTO.setValue(converter.convert(rules));
         openItemDTO.setComment("Program auto-join");
         openItemDTO.setDataChangeCreatedBy("apollo");
-        apolloOpenApiClient.createOrUpdateItem(appId, "DEV", "default", "application", openItemDTO);
+        apolloOpenApiClient.createOrUpdateItem(appId, "DEV", "default", "010001.sentinel-rule", openItemDTO);
 
         // Release configuration
         NamespaceReleaseDTO namespaceReleaseDTO = new NamespaceReleaseDTO();
@@ -62,6 +62,6 @@ public class FlowRuleApolloPublisher implements DynamicRulePublisher<List<FlowRu
         namespaceReleaseDTO.setReleaseComment("Modify or add configurations");
         namespaceReleaseDTO.setReleasedBy("apollo");
         namespaceReleaseDTO.setReleaseTitle("Modify or add configurations");
-        apolloOpenApiClient.publishNamespace(appId, "DEV", "default", "application", namespaceReleaseDTO);
+        apolloOpenApiClient.publishNamespace(appId, "DEV", "default", "010001.sentinel-rule", namespaceReleaseDTO);
     }
 }

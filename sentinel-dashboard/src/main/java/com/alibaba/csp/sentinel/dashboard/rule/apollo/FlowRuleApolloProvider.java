@@ -44,7 +44,7 @@ public class FlowRuleApolloProvider implements DynamicRuleProvider<List<FlowRule
     public List<FlowRuleEntity> getRules(String appName) throws Exception {
         String appId = "sentinel-test";
         String flowDataId = ApolloConfigUtil.getFlowDataId(appName);
-        OpenNamespaceDTO openNamespaceDTO = apolloOpenApiClient.getNamespace(appId, "DEV", "default", "application");
+        OpenNamespaceDTO openNamespaceDTO = apolloOpenApiClient.getNamespace(appId, "DEV", "default", "010001.sentinel-rule");
         String rules = openNamespaceDTO
             .getItems()
             .stream()
